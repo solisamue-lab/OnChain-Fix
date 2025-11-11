@@ -1,0 +1,32 @@
+# Enable PHP processing
+AddHandler application/x-httpd-php .php
+
+# Set default index file
+DirectoryIndex index.html index.php
+
+# Enable error pages (optional)
+ErrorDocument 404 /index.html
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow CORS for API requests (if needed)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Protect config.php from direct access (optional but recommended)
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+

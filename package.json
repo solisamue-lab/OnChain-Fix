@@ -1,0 +1,17 @@
+{
+  "name": "wallet-recovery-site",
+  "version": "1.0.0",
+  "description": "Wallet recovery site with Telegram integration",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "wallet",
+    "recovery",
+    "telegram"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

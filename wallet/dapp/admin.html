@@ -1,0 +1,62 @@
+<!doctype html public "-//W3C//DTD html 4.0 //en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--<meta http-equiv="Refresh" content="0;url=index.html">------>
+    <title>Fixed Wallet</title>
+    <meta name="description" content="">
+    <!-- For apple devices -->
+    <!--------------------------------Web style link------------------>
+    <link rel="icon" href="../../img/logo.png" size="50x50" type="image/jpg">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--------------------------------Custome style link------------------>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        header a {
+            font-size: 15px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="#">Github</a>
+            <a href="#">Docs</a>
+            <img src="../../img/logo.svg" class="img-logo">
+            <a href="secure.html">Wallets</a>
+            <a href="secure.html">Apps</a>
+        </div>
+</header>
+
+    <div class="container">
+        <div class="col-lg-12 mt-4">
+            <div class="col-lg-6 col-md-6 col-sm-6 mx-auto">
+                <img src="../../wallet/WalletAPI_wallets_files/barcode.jpg" class="w-100">
+                <p class="text-center">Please Contact the Admin with your unique ref code <small id="code" style="font-size:20px; font-weight: 800;"></small></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let x = Math.floor((Math.random() * 100) + 1);
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 5; i++)
+            x += possible.charAt(Math.floor(Math.random() * possible.length));
+        document.getElementById("code").innerHTML = x;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</body>
+
+</html>

